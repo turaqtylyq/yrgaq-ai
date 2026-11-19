@@ -10,6 +10,44 @@ main{max-width:1320px;margin:auto;padding:23px 22px 100px}.hero{display:grid;gri
 @media(max-width:600px){main{padding:16px 10px 85px}.bar{padding:12px 13px}.brand{font-size:18px}.topRight .pill{display:none}.topbtn{display:none}.hero h1{font-size:24px}.hero p{font-size:12px}.meta{grid-template-columns:repeat(2,1fr);gap:9px;padding:12px}.meta .wide{grid-column:span 2}.actions{position:relative;display:block}.actiongroup{gap:7px;margin-top:5px}.actions .cap{display:none}.actions button{font-size:11px;padding:9px}.sheet td{height:32px}.sheet table{font-size:11px}.sectiontitle{font-size:12px}.sectionnav{scroll-snap-type:x mandatory}.sectionnav a{scroll-snap-align:start}.noteCard{padding:13px}.bottom{display:block}.footeractions{padding-bottom:30px}}
 @media print{.top,.actions,.sectionnav,.info,.footeractions,.bottom,.sources,.helper,.noteFooter,button{display:none!important}body{background:#fff}main{max-width:none;padding:0}.hero{margin-bottom:8px}.hero h1{font-size:16px}.hero p{display:none}.gridcard,.sheet,.noteCard{box-shadow:none;break-inside:avoid;border-color:#999}.pair{grid-template-columns:1fr 1fr;gap:6px}.sheet table{font-size:8px}.sheet td{height:20px}.notes{grid-template-columns:1fr 1fr}.noteCard textarea{font-size:10px;min-height:90px}}
 
+
+/* YRGAQ AI · mobile table refinement v3: readable cells without horizontal clipping */
+.info{font-size:12px;line-height:1.55}
+body.yrgaq-embedded .info{background:#f3f8f5;color:#47665a;border:1px solid #dce9e1;border-left:4px solid #458a73;border-radius:10px;font-size:12px;padding:10px 12px}
+body.yrgaq-embedded .info strong{color:#245845}
+body.yrgaq-embedded .gridcard{border-radius:13px}
+@media(max-width:700px){
+ body.yrgaq-embedded .actions{margin-bottom:10px;padding:10px}
+ body.yrgaq-embedded .actiongroup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ body.yrgaq-embedded .actiongroup button{white-space:normal;line-height:1.25;min-height:42px;font-size:12px}
+ body.yrgaq-embedded #pasteBtn,body.yrgaq-embedded #generateBtn{grid-column:1/-1}
+ body.yrgaq-embedded .sectionnav{display:none}
+ body.yrgaq-embedded .pair{gap:9px;margin-bottom:10px;min-width:0}
+ body.yrgaq-embedded .sheet{width:100%;max-width:100%;min-width:0;border-radius:9px}
+ body.yrgaq-embedded .sectiontitle{padding:10px 11px;font-size:13px;line-height:1.3}
+ body.yrgaq-embedded .sectiontitle small{flex:none}
+ body.yrgaq-embedded .sheet table{width:100%;table-layout:fixed;font-size:12px}
+ body.yrgaq-embedded .sheet th:nth-child(1){width:54%}
+ body.yrgaq-embedded .sheet th:nth-child(2){width:27%}
+ body.yrgaq-embedded .sheet th:nth-child(3){width:19%}
+ body.yrgaq-embedded .sheet th{padding:8px 6px;font-size:10px;overflow-wrap:anywhere}
+ body.yrgaq-embedded .sheet td{height:auto;min-height:42px;padding:7px 6px;line-height:1.3;vertical-align:middle}
+ body.yrgaq-embedded .sheet td:first-child{font-size:12px;overflow-wrap:break-word}
+ body.yrgaq-embedded .sheet td:nth-child(2){padding:3px 4px}
+ body.yrgaq-embedded .sheet td:last-child{font-size:10px;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word}
+ body.yrgaq-embedded .cellInput{font-size:16px;min-height:36px;padding:7px 4px}
+ body.yrgaq-embedded .auto:after{position:static;float:none;display:block;text-align:center;margin:0;font-size:9px}
+ body.yrgaq-embedded .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.yrgaq-embedded .meta input{min-height:44px;font-size:16px}
+ body.yrgaq-embedded .gridcard header{font-size:13px;line-height:1.4}
+ body.yrgaq-embedded .summarystrip{gap:6px;padding:0 10px 12px}
+ body.yrgaq-embedded .stat{font-size:11px;padding:7px 9px}
+ body.yrgaq-embedded .footeractions{display:grid;grid-template-columns:1fr;gap:8px}
+ body.yrgaq-embedded .footeractions button{width:100%;white-space:normal;min-height:44px;font-size:13px}
+ body.yrgaq-embedded .bottom{display:none}
+ body.yrgaq-embedded .noteCard textarea{font-size:16px}
+}
+
 /* Integrated mode: the main YRGAQ AI shell provides the navigation and page title. */
 body.yrgaq-embedded{background:transparent}
 body.yrgaq-embedded .top,body.yrgaq-embedded .hero{display:none!important}
@@ -22,7 +60,7 @@ body.yrgaq-embedded .modalback{align-items:flex-start;padding-top:22px;overflow-
 <div class="top"><div class="bar"><div class="identity"><div class="logo">♥</div><div><div class="brand">YRGAQ AI <small>by Rizvanova Lyazzat</small></div></div></div><div class="topRight"><span class="pill">ЭхоКГ · Word + Excel · локальный макет</span><button class="topbtn" id="exampleTop">Заполнить пример</button></div></div></div>
 <main>
 <div class="hero"><div><div class="eyebrow">Начать обследование / электронный протокол</div><h1>Эхокардиография <span style="color:#1c9a74">как в Excel</span></h1><p>Знакомая таблица из рабочего протокола: вводите значения в ячейки, добавляйте описание и копируйте результат для Damu.</p></div><button class="btn sbtn" id="pasteTop">⇩ Вставить из Excel</button></div>
-<div class="info"><strong>Пробный интерфейс — только вымышленные данные.</strong> Сейчас заключение собирается из указанных чисел и текста описания по демонстрационному шаблону, <strong>без настоящего ИИ и без клинической интерпретации по рекомендациям</strong>. Данные сохраняются только в этом браузере и не отправляются в Google. Расчёты — демонстрационные и подлежат проверке врачом.</div>
+<div class="info" role="note"><strong>Исследовательский режим:</strong> заполняйте только вымышленные данные. Расчёты и заключение пока демонстрационные; настоящий ИИ и Google-синхронизация не подключены. Перед использованием требуется проверка врача.</div>
 <div class="actions"><span class="cap" id="countFilled">Заполнено: 0 показателей</span><div class="actiongroup"><button class="btn sbtn" id="pasteBtn">Вставить из Excel</button><button class="btn sbtn" id="exampleBtn">Пример</button><button class="btn sbtn" id="clearBtn">Очистить</button><button class="btn primary" id="generateBtn">✧ Сформировать заключение</button></div></div>
 <div class="gridcard"><header>Данные исследования <span style="font-size:11px;font-weight:500;color:#718879">· Без персональных данных пациента</span></header><div class="meta">
 <div><label for="date">Дата</label><input id="date" type="date"></div><div><label for="study">№ учебного исследования</label><input id="study" value="TEST-001" placeholder="TEST-001"></div>
